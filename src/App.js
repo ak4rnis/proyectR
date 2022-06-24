@@ -21,7 +21,7 @@ function App() {
         <Stack direction="row" spacing={2} justifyContent="space-between">
           <LayoutMenuLateral />
           <LayoutCentro />
-          <LayoutInformacion />
+          
         </Stack> 
       </Box>
     </ThemeProvider>

@@ -21,97 +21,60 @@ const LayoutCentro = () => {
       
     })
   return (
-    <Box flex={4} p={2}>
-        <Card sx={{margin: 5, }}>
-            <CardHeader 
-                title="Diagnostico de Equipo" 
-                subheader="Por favor llenar el formulario"
-                
-                
-            />
-            
-                
-            
-            <CardContent>
-                
-                <Typography variant="body2" color="text.secondary">
-                    En este vista veremos las opciones de crear , ver los diagnosticos acerca de la informacion acerca sobre la identificacion del equipo, inspeccion visual, revision , pruebas tecnicas, accesorios y observaciones de los equipos.
-                </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
-            <Tooltip onClick={e => setOpen(true)} title="Agregar Diagnostico" sx={{position: "fixed", bottom: 20, left: {xs: "calc(50% - 25px)", md: 30}}}>
-                <Fab color="primary" aria-label='add'>
-                    <Add />
-                </Fab>
-            </Tooltip>
-            <StyledModal
-                open={open}
-                onClose={e => setOpen(false)}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-            >
-               <Box  bgcolor={"background.default"} color={"text.primary"} p={3} borderRadius={5}>
-                    <Stack spacing={2}>
+    <Box flex={4} p={2}>     
+        <Stack spacing={2}>
+            <Stack direction="row" spacing={2}>
+                <Button onClick={e => setOpen(true)} color="success" startIcon={<AddCircleIcon />}>
+                    <Typography variant='button'>IDENTIFICACION DE EQUIPO</Typography>
+                </Button>
+                <Button color="secondary" startIcon={<AddCircleIcon />}>
+                    <Typography variant="button">INSPECCION VISUAL</Typography>
+                </Button>
+            </Stack>
+        </Stack>
+        <StyledModal
+            open={open}
+            onClose={e => setOpen(false)}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+        >
+            <Box  bgcolor={"background.default"} color={"text.primary"} p={3} borderRadius={5}>
+                <Stack spacing={2}>
                         
-                        <Typography variant="h6" color="gray" textAlign="center">Formulario del Diagnostico del equipo : </Typography>
+                    <Typography variant="h6" color="gray" textAlign="center">Formulario de Identificacion del equipo : </Typography>
                         
-                        
-                            <Typography variant="body2">
-                                1. Identificacion del equipo :
-                            </Typography>
                             <Stack direction="row" spacing={2}>
                                 <TextField 
-                                    
                                     id="outlined-required"
                                     label="Tipo de equipo"
-                            
                                 />
                                 <TextField
-                        
                                     id="outlined-required"
                                     label="Marca"
-                        
                                 />
-                                
-                            
-
                             </Stack>
                             <Stack direction="row" spacing={2}>
-                            <TextField
-                    
-                                id="outlined-required"
-                                label="Modelo"
-
-
+                                <TextField
+                                    id="outlined-required"
+                                    label="Modelo"
                                 />
-                            <TextField
+                                <TextField
                                     id="outlined-required"
                                     label="Potencia"
                                 />
                             </Stack>
                             <Stack direction="row" spacing={2}>
-                                
                                 <TextField
                                     id="outlined-required"
                                     label="N° de serie"
                                 />
-                               
-                                    
-                                    
-                                <TextField
-                                            
+                                <TextField 
                                     id="outlined-required"
                                     label="Fecha de revision"    
-                                   
                                 />
-                                    
-                                
-                                
-                                
                             </Stack>
                             <Stack direction="row" spacing={2} >
                                 <TextField
-                                    
                                     id="outlined-required"
                                     label="Configuracion 1/1 -3/1 - 3/3"
                                 />
@@ -119,7 +82,6 @@ const LayoutCentro = () => {
                                     id="outlined-required"
                                     label="Modelo de baterias"
                                 />
-                                
                             </Stack>
                             <Stack direction="row" spacing={2}>
                                 <TextField
@@ -131,30 +93,16 @@ const LayoutCentro = () => {
                                     label="Capacidad del equipo"
                                 />
                             </Stack>
-
-                        
-                        
-                            
-                            
-                            
-                        
+                            <Stack alignContent="center" spacing={2}>
+                                <Button size='median' variant='contained' 
+                                    sx={{backgroundColor: "green", borderColor: "green", color:"white", ":hover": {backgroundColor: "green", borderColor: "green", color:"white"}}} >
+                                    Guardar Cambios
+                                </Button>
+                            </Stack>
                     </Stack>
-                
-                <hr />
-                
-                
-                    
-                
-                
-                
                 </Box> 
                     
-            </StyledModal>  
-                
-               
-                
-                </CardActions>
-        </Card>
+        </StyledModal>  
     </Box>
   )
 }
